@@ -4,6 +4,13 @@ public class Auto {
 	private String marca;
 	private int anio;
 	private double precio;
+	
+	public Auto(String marca,int anio,double precio) {
+		this.anio=anio;
+		this.marca=marca;
+		this.precio=precio;
+	}//constructores con diferentes variables
+	
 	public String getMarca() {
 		return marca;
 	}
