@@ -24,5 +24,10 @@ public class Calculadora {
 		cociente = dividendo / divisor;
 		return cociente;
 	}
-
+	
+	public double promediar(double valor1,double valor2,double valor3) {
+		double promedio;
+		promedio=(valor1+valor2+valor3)/3;
+		return promedio;
+	}
 }
