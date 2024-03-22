@@ -33,9 +33,9 @@ public class TestPrestamo {
             ArrayList<Prestamo> prestamosCliente1 = banco.buscarPrestamos("1234567890");
             for (Prestamo prestamo : prestamosCliente1) {
             	cliente1.mostrarCliente();
-            	prestamo.mostrarPrestamo();
-            	
+            	prestamo.mostrarPrestamo();	
             }
+            
             ArrayList<Prestamo> prestamosCliente2 = banco.buscarPrestamos("0987654321");
             for (Prestamo prestamo : prestamosCliente2) {
             cliente2.mostrarCliente();
