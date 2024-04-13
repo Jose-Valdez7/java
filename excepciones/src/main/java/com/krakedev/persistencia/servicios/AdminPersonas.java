@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.krakedev.persistencia.entidades.Persona;
 import com.krakedev.persistencia.utils.ConexionBDD;
+import com.krakedev.persistencia.utils.Convertidor;
 
 public class AdminPersonas {
 	private static final Logger LOGGER = LogManager.getLogger(AdminPersonas.class);
@@ -212,13 +213,20 @@ public class AdminPersonas {
 				String cedula=rs.getString("cedula");
 				int numeroHijos=rs.getInt("numero_hijos");
 				double estatura=rs.getDouble("estatura");
+				String fechaNacimiento = rs.getString("fecha_nacimiento");
+				String horaNacimiento = rs.getString("hora_nacimiento");
 				
 				Persona p=new Persona();
+				//formato de fecha convertidor
+				Date fechaNac=Convertidor.convertirFecha(fechaNacimiento);
+				Date horaNac=Convertidor.convertirHora(horaNacimiento);
 				p.setCedula(cedula);
 				p.setNombre(nombre);
 				p.setNumeroHijos(numeroHijos);
 				p.setEstatura(estatura);
-	
+				p.setFichaNacimiento(fechaNac);
+				p.setHoraNacimiento(horaNac);
+
 				personas.add(p);
 			}
 			
